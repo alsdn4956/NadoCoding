@@ -1,4 +1,4 @@
-'''print(-10)
+print(-10)
 print(3.14)
 print( 6*3)
 print(6 +(5*3))
@@ -49,24 +49,21 @@ print(type(3.5))
 print(type(str(3)))
 
 number = 3
-print(number) '''
-'''
+print(number)
+
+
 # 실습문제 : 역 이름 출력하기
 station = "사당"
 #station = "신도림"
 #station = "인천공항"
-
 print(station+"행 열차가 들어오고 있습니다.")
-'''
+
 
 #셀프체크
 status = "상품준비"
 #status = "배송 중"
 #status = "배송 완료"
 print("주문상태 : "+ status)
-
-
-
 
 
 
