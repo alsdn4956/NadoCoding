@@ -43,7 +43,7 @@ print(number)
 
 abs(x)  = absolute  x의 절댓값
 pow(x,y) x를 y만큼 거듭제곱한 값
-round(x , d) x를 반올림한 값 \, d는 표시할 소수점 이하 자릿수 
+round(x , d) x를 반올림한 값, d는 표시할 소수점 이하 자릿수 
 
 print(abs(-5))
 print(pow(3, 2))
