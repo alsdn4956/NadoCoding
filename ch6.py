@@ -79,7 +79,70 @@ person = None
 while person != customer:
     print("{}님, 커피가 준비됐습니다.".format(customer))
     person= input("이름이 어떻게 되세요?")
+
+
+'''absent = [2,5] # 결석한 학생 출석번호
+nobook=[7]
+
+
+for student in range(1,11):
+    if student in absent:
+        continue
+    elif student in nobook:
+        print("오늘은 여기까지. {}학생은 교무실로 따라오세요.".format(student))
+        break
+        
+    print("{}번 학생, 책을 읽어보세요.".format(student))
     
+    
+#형식 : [동작 for 변수 in 반복대상]
+
+students = [1,2,3,4,5]
+print(students)
+
+students=[i+100 for i in students]
+print(students)
+    
+    
+    
+valueppl= ["Iron man","Spider man","Batman"]
+
+valueppl = [len(i) for i in valueppl]
+print(valueppl)
+
+
+
+# 실습문제
+
+import random
+
+for people in range(1,51) :
+    time = random.randint(1,50)
+    if 5 <= time <= 15:
+        print("[0] {}번째 손님 (소요시간 : {}분)".format(people,time))
+        continue
+    else:
+        print("[ ] {}번째 손님 (소요시간 : {}분)".format(people,time))
+print("총 탑승객 : {}명".format(time))
+'''
+# 이게 되네 ....
+# 도움없이 혼자서 완벽히 푼 문제 ㅋ
+    
+    
+# 셀프체크
+price = 1000 #상품 가격
+goods = 9 #구매 상품 수
+total = 0 #총 가격
+
+for i in range(1,goods+1) :
+    print("2+1 상품입니다.")
+    if i % 3 == 0:
+        continue
+    total+= price
+    
+    
+print("총 가격은"+ str(total)+"원입니다.")
+
 
 
      
