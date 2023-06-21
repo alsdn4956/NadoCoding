@@ -1,7 +1,7 @@
 #subway =[10,20,30]
 #print(subway)
 
-'''subway=["푸","피글렛","티거"]
+subway=["푸","피글렛","티거"]
 subway.append("이요르")
 
 subway.insert(1,"루")
@@ -33,7 +33,7 @@ print(mixlist)
 numlist=[5,3,4,8,7]
 mixlist.extend(numlist)
 print(mixlist)
-'''
+
 
 # 딕셔너리
 # 형식 : 딕셔너리명 = {key1: value1, key2: value2}
@@ -79,7 +79,7 @@ print(cabinet)
 #튜플은 리스트와 달리 처음 정의할때를 제외하고 값의 변경이나 추가,삭제가 불가능하다.
 
 #형식 : 튜플명 = (값1, 값2 ...)
-'''
+
 menu = ("돈가스", "치즈돈가스")
 print(menu[0])
 print(menu[1])
@@ -143,9 +143,9 @@ print("치킨 당첨자 :",randint(1,20))
 print("커피 당첨자 :",sample(id,3))
 print("-- 축하합니다! --")
 # 중복발생 ...
-'''
 
-'''
+
+
 # 답지
 from random import *
 
@@ -159,7 +159,7 @@ print("-- 당첨자 발표 --")
 print("치킨 당첨자 : {0}".format(winners[0]))
 print("커피 당첨자 : {0}".format(winners[1:]))
 print("-- 축하합니다! --")
-'''
+
 
 
 print("신청한 과목은 다음과 같습니다.")
