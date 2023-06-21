@@ -1,5 +1,5 @@
 # 3. 연산자
-'''
+
 printnt(1+1)
 print(5*2)
 print(6/3)    #-> 나누기 결과는 실수 2.0으로 나옴
@@ -99,7 +99,6 @@ print(int(random()*45)+1)
 
 #randrange(시작 숫자, 끝 숫자)  -> 범위를 설정할 수 있다. 끝 숫자 미포함
 #randint(시작 숫자, 끝 숫자) -> 끝 숫자 포함
-'''
 
 
 from random import *
@@ -108,17 +107,17 @@ print("오프라인 스터디 모임 날짜는 매월 ", randint(4, 28), "일로
 
 
 # 답지
-'''
+
 from random import * 
 date = randint(4, 28)
 print("오프라인 스터디 모임 날짜는 매월 "+ str(date) + "일로 선정 되었습니다.")
-'''
+
 
 
 
 #Self Check
 
-'''C =30
+C =30
 print("섭씨 온도 : ",C)
 C= (C*9 /5) + 32
 print("화씨 온도 : ",C)
@@ -129,7 +128,6 @@ X = 10
 print("섭씨 온도 : ",X)
 X= (X*9/5) +32
 print("화씨 온도 : ",X)
-'''
 
 celsius = 10
 fahrenheit = (celsius *9 / 5) + 32
