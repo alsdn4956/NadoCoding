@@ -1,7 +1,7 @@
 # 제어문
 # 형식: if 조건:
               #실행할 명령
-'''
+
 weather= "비"
 if weather == "비" :
     print("우산을 챙기세요")
@@ -72,7 +72,7 @@ while index >=1 :  #부르는 횟수가 1이상일 때만 실행 !!
     
     if index == 0:
         print("폐기 처분합니다.")
-'''
+
 customer = "토르"
 person = None
 
@@ -80,8 +80,7 @@ while person != customer:
     print("{}님, 커피가 준비됐습니다.".format(customer))
     person= input("이름이 어떻게 되세요?")
 
-
-'''absent = [2,5] # 결석한 학생 출석번호
+absent = [2,5] # 결석한 학생 출석번호
 nobook=[7]
 
 
@@ -124,7 +123,7 @@ for people in range(1,51) :
     else:
         print("[ ] {}번째 손님 (소요시간 : {}분)".format(people,time))
 print("총 탑승객 : {}명".format(time))
-'''
+
 # 이게 되네 ....
 # 도움없이 혼자서 완벽히 푼 문제 ㅋ
     
