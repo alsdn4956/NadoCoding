@@ -1,7 +1,7 @@
 # 사용자 정의 함수 
 # 형식 : def 함수명() :
 
-'''def open_account():
+def open_account():
     print("새로운 계좌를 개설합니다.")
 
 open_account()  #앞에 정의한 open_account() 함수 호출
@@ -131,23 +131,9 @@ print(get_air_quality(15))
 print(get_air_quality(85))
 
 #함수 안에서는 print 보다는 return을 써 줘야한다 !!
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
     
-    
+
