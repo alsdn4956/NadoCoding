@@ -1,6 +1,6 @@
 # 문자열
 
-'''
+
 sentence1 = "나는 소년입니다."
 print(sentence1)
 
@@ -96,14 +96,14 @@ print("나는 {age}살이며, {color}색을 좋아해요".format(age=45,color="�
 age =20
 color ="빨강"
 print(f"나는 {age}살이며, {color}색을 좋아해요.")
-'''
+
 print("백문이 불여일견\n백견이 불여일타.")
 
 print("저는 \"나도코딩\"입니다.")
       
 #python 3.6.9
 
-'''
+
 url = "http://naver.com"
 #url = "http://daum.net"
 #url = "http://google.com"
@@ -113,7 +113,7 @@ my_pass = url.replace("http://", "")    #naver.com
 my_pass= my_pass[:my_pass.index(".")]   #naver
 my_pass= my_pass[0:3] + str(len(my_pass)) + str(my_pass.count("e"))+"!"
 print("{}의 비밀번호는 {}입니다.".format(url, my_pass))
-'''
+
 
 
 #Self Check
