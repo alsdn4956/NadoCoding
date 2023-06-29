@@ -45,7 +45,7 @@ attack(tank2_name, "1시", tank2_damage)
     #def 메서드명(self, 전달값1, 전달값2 ..):
     
 #형식 : self.변수명= 값
-'''
+
 class Unit:
     def __init__(self, name, hp, damage):
         self.name = name #인스턴트 변수 name에 전달값 name 저장
@@ -79,15 +79,33 @@ if stealth2.cloaking == True:
 #오류발생
 #if stealth1.cloaking== True :
  #   print("{}는 현재 은폐 상태입니다.".format(stealth1.name))
+'''
 
-    
-class Attackunit : #공격 유닛
-    def __init__(self, name, hp, damage) :
+
+
+#일반 유닛
+class Unit :
+    def __init__(self,name,hp,speed):
         self.name = name
         self.hp = hp
+        self.speed = speed     #지상 이동 속도
+        
+        
+    def move(self,location):
+        print("[지상 유닛 이동]")
+        print("{} : {} 방향으로 이동합니다. [속도 {}]".format(self.name,location,self.speed))
+        
+        
+              
+    
+    
+    
+class AttackUnit(Unit) : #공격 유닛
+    def __init__(self, name, hp, damage,speed) : #speed 추가
+        Unit.__init__(self,name,hp,speed) #speed 추가
         self.damage = damage
-    
-    
+        
+ 
     def attack(self, location):
         print("{} : {} 방향 적군을 공격합니다. [공격력 {}]".format(self.name,location,self.damage))
     
@@ -101,17 +119,70 @@ class Attackunit : #공격 유닛
             print("{}: 파괴됐습니다.".format(self.name))
         
         
-#화염방사병 : 공격유닛, 화염방사기를 사용함
-flamethrower1 = Attackunit("화염방사병", 50, 16)
-flamethrower1.attack("5시")
+class Flyable:
+    def __init__(self,flying_speed): # 비행속도
+        self.flying_speed = flying_speed
+        
+        
+    def fly(self, name, location):
+        print("{} : {} 방향으로 날아갑니다. [속도 {}]".format(name,location,self.flying_speed))
+        
+        
+        
+# 공중 공격 유닛
 
-#25만큼의 공격을 2번 받음
-flamethrower1.damaged(25)
-flamethrower1.damaged(25)
-
-
-
-
+class FlyableAttackUnit(AttackUnit, Flyable) :
+    #유닛 이름, 체력, 공격력, 비행속도
+    def __init__(self, name, hp, damage, flying_speed):
+        AttackUnit.__init__(self,name,hp,damage,0) #지상 이동 속도 0
+        Flyable.__init__(self,flying_speed)
+        
+    def move(self,location):
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
+        
+                         
+        
+        
+        
+        
+# 요격기
+#interceptor = FlyableAttackUnit("요격기",200,6,5)
+#interceptor.fly(interceptor.name, "3시")
+        
 
     
+# 호버 바이크 : 지상유닛, 기동성 좋음
+hoverbike = AttackUnit("호버 바이크", 80 ,20,10) #지상 이동 속도 10
+
+#우주 순양함 : 공중유닛, 체력 굉장히 좋음, 공격력도 좋음
+spacecruiser = FlyableAttackUnit("우주 순양함", 500,25,3) #비행속도 3
+
+hoverbike.move("11시")
+spacecruiser.move("9시")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
