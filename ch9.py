@@ -89,18 +89,25 @@ class Unit :
         self.name = name
         self.hp = hp
         self.speed = speed     #지상 이동 속도
+        print("{} 유닛을 생성했습니다.".format(name))
         
         
     def move(self,location):
-        print("[지상 유닛 이동]")
+        #print("[지상 유닛 이동]")
         print("{} : {} 방향으로 이동합니다. [속도 {}]".format(self.name,location,self.speed))
         
+    def damaged(self, damage) : #damage 만큼 유닛 피해   #AttackUnit 클래스에서 Unit 클래스로 이동
+        print("{} : {} 만큼 피해를 입었습니다.".format(self.name,damage))
+        self.hp -= damage
+        print("{} : 현재 체력은 {}입니다.".format(self.name,self.hp))
+        if self.hp <= 0 :
+            print("{}: 파괴됐습니다.".format(self.name))
         
               
     
     
-    
-class AttackUnit(Unit) : #공격 유닛
+#공격 유닛    
+class AttackUnit(Unit) :
     def __init__(self, name, hp, damage,speed) : #speed 추가
         Unit.__init__(self,name,hp,speed) #speed 추가
         self.damage = damage
@@ -109,14 +116,29 @@ class AttackUnit(Unit) : #공격 유닛
     def attack(self, location):
         print("{} : {} 방향 적군을 공격합니다. [공격력 {}]".format(self.name,location,self.damage))
     
+
+class Soldier(AtaackUnit):
+    def __init__(self):
+        AttackUnit.__init__(self,"보병",40,5,1)
+        
+        #강화제: 일정 시간 동안 이동속도와 공격속도 증가, 체력 10 감소
+    def booster(self):
+        if self.hp>10 :
+            self.hp-= 10
+            print("{} : 강화제를 사용합니다. (HP 10 감소)".format(self.name))
+        else:
+            print("{} : 체력이 부족해 기술을 사용할 수 없습니다.".format(self.name))
+            
+class Tank(AttackUnit):
+    #시지 모드 : 탱크를 지상에 고정, 이동불가, 공격력 증가
+    siege_developed = Flase #시지모드 개발여부, 클래스 변수로 정의
+ 
     
-    def damaged(self, damage) : #damage 만큼 유닛 피해
-        print("{} : {} 만큼 피해를 입었습니다.".format(self.name,damage))
-        self.hp -= damage
-        print("{} : 현재 체력은 {}입니다.".format(self.name,self.hp))
+    def __init__(self):
+        AttackUnit.__init__init(self,"탱크",150,35,1)
+        self.seige_mode= False #시지모드 (해제상태), 인스턴스 변수로 정의
+                               
     
-        if self.hp <= 0 :
-            print("{}: 파괴됐습니다.".format(self.name))
         
         
 class Flyable:
@@ -141,8 +163,47 @@ class FlyableAttackUnit(AttackUnit, Flyable) :
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
         
-                         
+    
+
+    
+   
+#건물 유닛
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        #Unit.__init__(self, name, hp, 0) #건물 못 움직이므로 location = 0
+        super().__init__(name,hp,0)  #부모클래스 접근, self 없이 사용
+        self.location = location
         
+        
+        
+    
+supply_depot = BuildingUnit("보급고", 500,"7시")  #위에 건물유닛 배정받음 따라서  name, hp, location 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         
         
@@ -160,25 +221,6 @@ spacecruiser = FlyableAttackUnit("우주 순양함", 500,25,3) #비행속도 3
 
 hoverbike.move("11시")
 spacecruiser.move("9시")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
