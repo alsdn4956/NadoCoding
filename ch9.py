@@ -240,6 +240,63 @@ game_over()
 
 
 
+# 실습 문제 : 부동산 프로그램 만들기
+
+class House:   
+    #매물 초기화 : 위치, 건물 종류, 매물 종류, 가격, 준공연도
+    def __init__(self, location, house_type, deal_type, price, completion_year):
+        self.location = location
+        self.house_type = house_type
+        self.deal_type = deal_type
+        self.price = price
+        self.completion_year = completion_year    
+        
+    #매물 정보 표시             
+    def show_detail(self):
+        print(self.location, self.house_type, self.deal_type, self.price, self.completion_year)
+                 
+                 
+houses=[]
+house1 = House("강남","아파트","매매","10억","2010")
+house2 = House("마포","오피스텔","전세","5억","2007")
+house3 = House("송파","빌라","월세","500/50만","2000")
+houses.append(house1)    #houses 리스트에 객체 추가
+houses.append(house2)
+houses.append(house3)
+
+print("총 {}대의 매물이 있습니다.".format(len(houses)))
+
+for house in houses:
+    house.show_detail()
+    
+
+class ParkingManager :
+    def __init__(self, capacity):
+        self.capacity = capacity     #총 주차 가능 대수
+        self.count = 0 #현재 등록된 차량 수
+        print(f"총 {capacity}대를 등록할 수 있습니다.")
+        
+        
+        
+    def register(self):
+        if self.count>= self.capacity :
+            print("더 이상 등록할 수 없습니다.")
+            return
+        self.count += 1
+        print(f"차량 신규 등록  ({self.count}/{self.capacity})")
+        
+        
+        
+#테스트 코드        
+
+
+manager = ParkingManager(5)
+for i in range(6):
+    manager.register()
+
+
+
+
 
 
 
